@@ -12,7 +12,10 @@ class _homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.green[900],
+        ),
+        backgroundColor: Colors.white,
       body:Stack(
         children: [
           SingleChildScrollView(
@@ -21,47 +24,6 @@ class _homepageState extends State<homepage> {
                 children:[
                   SizedBox(
                     height: 550,
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(30.0),
-                    width: double.infinity,
-                    child: TextButton(
-                      onPressed: () {
-                        print('Login');
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
-                      },
-                      child: Text(
-                        'E-Spot',
-                        style:
-                        TextStyle(color: Colors.black),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.green[900],
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 0.01 ,
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(30.0),
-                    width: double.infinity,
-                    child: TextButton(
-                      onPressed: () {
-                        print('Login');
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
-                      },
-                      child: Text(
-                        'E-lab',
-                        style:
-                        TextStyle(color: Colors.black),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.green[900],
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
                   ),
                 ]
             ),
@@ -128,7 +90,15 @@ class _homepageState extends State<homepage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
+        },
+        backgroundColor: Colors.green[900],
+        foregroundColor: Colors.black,
+        child: Icon(Icons.add ),
 
+      ),
     );
   }}
 

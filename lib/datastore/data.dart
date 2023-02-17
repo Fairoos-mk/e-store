@@ -32,16 +32,6 @@ class _DataState extends State<Data> {
     return Scaffold(
         key: _scaffoldKey,
         body: Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                Colors.white10,
-                Colors.white10,
-              ])),
-
           child: ListView(
             children: [
               Form(

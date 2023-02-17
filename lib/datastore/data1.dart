@@ -21,15 +21,6 @@ class _CompliantState extends State<Compliant> {
     return Scaffold(
 
       body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-              Colors.white10,
-              Colors.white10,
-            ])),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -65,9 +56,12 @@ class _CompliantState extends State<Compliant> {
                     ),
                   );
                 }),
-            IconButton(onPressed: (){
-              lengthNOtifier.value = lengthNOtifier.value + 1;
-              }, icon: Icon(Icons.add_circle_outline)),
+            Padding(
+              padding: const EdgeInsets.only(left: 300),
+              child: IconButton(onPressed: (){
+                lengthNOtifier.value = lengthNOtifier.value + 1;
+                }, icon: Icon(Icons.add_circle_outline)),
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
@@ -93,9 +87,12 @@ class _CompliantState extends State<Compliant> {
                   );
                 }
                 ),
-            IconButton(onPressed: (){
-              lengthNOtifier.value = lengthNOtifier.value + 1;
-            }, icon: Icon(Icons.add_circle_outline)),
+            Padding(
+              padding: const EdgeInsets.only(left: 300),
+              child: IconButton(onPressed: (){
+                lengthNOtifier.value = lengthNOtifier.value + 1;
+              }, icon: Icon(Icons.add_circle_outline)),
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
@@ -107,53 +104,84 @@ class _CompliantState extends State<Compliant> {
             ),
             // Column(
             //   children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 10,),
-                    Text('Charger ',style: TextStyle(fontSize: 17.0), ),
-                    Checkbox(
-                        checkColor: Colors.green[900],
-                        activeColor: Colors.white,  //only check box
-                        value: check1, //unchecked
-                        onChanged: (bool? value){
-                          //value returned when checkbox is clicked
-                          setState(() {
-                            check1 = value;
-                          });
-                        }
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+               Column(
+                   children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          Text('Charger ',style: TextStyle(fontSize: 17.0), ),
+                          Checkbox(
+                              checkColor: Colors.green[900],
+                              activeColor: Colors.white,  //only check box
+                              value: check1, //unchecked
+                              onChanged: (bool? value){
+                                //value returned when checkbox is clicked
+                                setState(() {
+                                  check1 = value;
+                                });
+                              }
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(width: 10,),
-                    Text('Mirror ',style: TextStyle(fontSize: 17.0), ),
-                    Checkbox(
-                        checkColor: Colors.green[900],
-                        activeColor: Colors.white,  //only check box
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: Row(
+                         children: [
+                           Text('Mirror ',style: TextStyle(fontSize: 17.0), ),
+                           Padding(
+                             padding: const EdgeInsets.only(left: 12),
+                             child: Checkbox(
+                                 checkColor: Colors.green[900],
+                                 activeColor: Colors.white,  //only check box
 //only check box
-                        value: check2, //unchecked
-                        onChanged: (bool? value){
-                          //value returned when checkbox is clicked
-                          setState(() {
-                            check2 = value;
-                          });
-                        }
-                    ),
-                    SizedBox(width: 10,),
-                    Text('Mate ',style: TextStyle(fontSize: 17.0), ),
-                    Checkbox(
-                        checkColor: Colors.green[900],
-                        activeColor: Colors.white,  //only check box
+                                 value: check2, //unchecked
+                                 onChanged: (bool? value){
+                                   //value returned when checkbox is clicked
+                                   setState(() {
+                                     check2 = value;
+                                   });
+                                 }
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: Row(
+                         children: [
+                           Text('Mate ',style: TextStyle(fontSize: 17.0), ),
+                           Padding(
+                             padding: const EdgeInsets.only(left: 20),
+                             child: Checkbox(
+                                 checkColor: Colors.green[900],
+                                 activeColor: Colors.white,  //only check box
 //only check box
-                        value: check3, //unchecked
-                        onChanged: (bool? value){
-                          //value returned when checkbox is clicked
-                          setState(() {
-                            check3 = value;
-                          });
-                        }
-                    ),
-                  ],
+                                 value: check3, //unchecked
+                                 onChanged: (bool? value){
+                                   //value returned when checkbox is clicked
+                                   setState(() {
+                                     check3 = value;
+                                   });
+                                 }
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                   ],
+               ),
+                    ],
+                  ),
                 ),
-          ],
-        ),
+                  ],
+                )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
