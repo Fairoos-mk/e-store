@@ -1,6 +1,9 @@
 import 'package:e_lab/datastore/data.dart';
 import 'package:flutter/material.dart';
 
+import 'Billing/Billing1.dart';
+import 'E-store/store1.dart';
+
 
 class homepage extends StatefulWidget {
   @override
@@ -14,8 +17,25 @@ class _homepageState extends State<homepage> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green[900],
-        ),
-        backgroundColor: Colors.white,
+            actions: <Widget>[
+        IconButton(
+        icon: const Icon(Icons.local_print_shop_sharp),
+      tooltip: 'billing',
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_)=> Billing1()));
+      },
+
+    ),
+              IconButton(
+                icon: const Icon(Icons.local_grocery_store_outlined),
+                tooltip: 'E-store',
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=> Store1()));
+                },
+
+              ),
+            ],
+    ),
       body:Stack(
         children: [
           SingleChildScrollView(
@@ -37,6 +57,9 @@ class _homepageState extends State<homepage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.green[900],
+              ),
               accountName: Text(''),
               accountEmail: Text("fairoos@gmail.com"),
               currentAccountPicture: CircleAvatar(
@@ -52,39 +75,28 @@ class _homepageState extends State<homepage> {
             ListTile(
               leading: Icon(Icons.import_contacts), title: Text("Import contact"),
               onTap: () {
-                Navigator.pop(context);
-              },
-            ),ListTile(
-              leading: Icon(Icons.security), title: Text("Security"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),ListTile(
-              leading: Icon(Icons.home), title: Text("Home"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),ListTile(
-              leading: Icon(Icons.share), title: Text("Share"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),ListTile(
-              leading: Icon(Icons.save_alt), title: Text("Save"),
-              onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
               },
             ),
             ListTile(
               leading: Icon(Icons.settings), title: Text("Settings"),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
               },
             ),
             ListTile(
               leading: Icon(Icons.contacts), title: Text("Contact Us"),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
+              },
+            ),
+            SizedBox(
+              height: 280,
+            ),
+            ListTile(
+              leading: Icon(Icons.logout_outlined), title: Text("LogOut"),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
               },
             ),
           ],
